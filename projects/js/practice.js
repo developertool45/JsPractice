@@ -10,7 +10,7 @@
     // }
     // findGreaterNumber(myArray, 2);
     
-    
+
 let str = "abcdabcefgggh";
 
 function getUnique(str) {
