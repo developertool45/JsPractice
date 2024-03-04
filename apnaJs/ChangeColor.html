@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backgroud Change color</title>
+</head>
+<body style="text-align: center;">
+    <h1>Color name</h1>
+
+    <button>click me</button> <br><br>
+   <div style="border: 2px solid gray; width: 600px; height: 300px; text-align: center; margin:auto;"> Changing color show here</div>
+    
+</body>
+<script>
+
+let btn = document.querySelector('button');
+let div = document.querySelector('div');
+let h1  = document.querySelector('h1');
+
+function random() {
+    let random = Math.floor(Math.random()*255);
+    return random;
+}
+
+function colorchange(){
+        let colorchange = `rgb(${random(255)},${random(255)},${random(255)})`;
+        div.style.backgroundColor = colorchange;
+        h1.innerHTML = colorchange;
+}
+
+btn.addEventListener("mouseover",colorchange )
+
+</script>
+</html>
