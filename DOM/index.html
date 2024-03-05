@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom manupulation</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+</style>
+<body>
+    <h1> Dom Manupulation</h1>
+    <h2> Dom Manupulation - part 01</h2>
+    <h3> Dom Manupulation - part 02</h3>
+    <h4> Dom Manupulation - part 03</h4>
+    <button>Click me!</button>
+</body>
+
+<script>
+ let btn = document.querySelector('button');
+ let h1 =  document.querySelector('h1')
+ let h2 =  document.querySelector('h2')
+ let h3 =  document.querySelector('h3')
+ let h4 =  document.querySelector('h4')
+
+    function colorChange(){
+       this.style.backgroundColor = "green";
+       console.log("I got Click")
+    }
+
+    btn.addEventListener("click", colorChange);
+    h1.addEventListener("click", colorChange);
+    h2.addEventListener("click", colorChange);
+    h3.addEventListener("click", colorChange);
+    h4.addEventListener("click", colorChange);
+</script>
+</html>

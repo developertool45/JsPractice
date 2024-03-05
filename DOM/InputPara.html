@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input to paragraph</title>
+</head>
+<body>
+    <h1>Input to paragraph</h1>
+    <p></p>
+    <input type="text" placeholder="type here">
+</body>
+<script>
+
+    let input =  document.querySelector('input');
+
+    input.addEventListener("input", function(){
+        console.log(this.value)
+        let p =  document.querySelector('p')
+        p.innerText = this.value;
+    })
+
+
+
+</script>
+</html>
