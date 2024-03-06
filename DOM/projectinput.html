@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | List item and delte</title>
+</head>
+<body>
+    <h2>Project | List item and delte</h2>
+    <input type="text" placeholder="add Task">
+    <button>add Task</button>
+    <ul>
+        <li>Rajneesh <button class="delete"> del</button></li>
+        <li>Nareshuddin <button class="delete"> del</button></li>
+    </ul>
+</body>
+
+<script>
+    let input =  document.querySelector('input')
+    let ul =  document.querySelector('ul')
+    let btn =  document.querySelector('button')
+
+
+    input.addEventListener("change",function(e){
+        console.log(input.value)
+        // add li
+        let li =  document.createElement('li');
+        li.innerText = input.value;
+        ul.appendChild(li);
+
+        // add button
+        let addDltBtn = document.createElement('button')
+        addDltBtn.innerText = "del"
+        addDltBtn.classList.add("delete")
+        li.appendChild(addDltBtn);
+
+        input.value = " "
+    })
+
+// first method
+
+ul.addEventListener("click", function(e){
+    console.log(e.target.nodeName);
+        if(e.target.nodeName == "BUTTON"){
+            let item = e.target.parentElement;
+            item.remove();
+
+        }
+})
+    //second method
+    // let delBtn = document.querySelectorAll('.delete')
+// for(btn of delBtn){
+// btn.addEventListener("click", function(e){
+//      console.dir(e.target.nodeName)
+//      if( e.target.nodeName == 'BUTTON'){
+//         this.parentElement.remove();
+//      }
+// })
+// }
+
+
+</script>
+</html>
