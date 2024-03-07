@@ -76,12 +76,15 @@ document.addEventListener("keypress", function(){
 })
 
 //step 3
+
+// adding flash class to change bg colors
 function gameFlash(btn){
    btn.classList.add("flash")
    setTimeout(()=>{
       btn.classList.remove("flash")
    },250)   
 }
+// adding flash class to change bg colors when user click
 function userFlash(btn){
    btn.classList.add("userflash")
    setTimeout(()=>{
