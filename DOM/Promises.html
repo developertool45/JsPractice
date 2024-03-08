@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call backhell</title>
+</head>
+<body style="text-align: center;">  
+    <h1> Call back & Promises</h1>
+    
+</body>
+
+<script>
+
+let h1 =  document.querySelector('h1')
+
+function saveToDb(data){
+    return new Promise((success, failure)=> {
+        let internetSpeed = Math.floor(Math.random()*10)+1;
+        if(internetSpeed > 4){
+            success(" Success : data was saved");
+        }else{
+            failure( "Weak connection");
+        }
+    })
+}
+
+// let request = saveToDb("rajneesh") // req == promise object
+// console.log(request);
+saveToDb("rajneesh")
+.then((result) => {
+    console.log("Data 1 was saved ")
+    console.log("result of promise :", result)
+    return saveToDb("hello world")
+}).then((result)=> {
+    console.log("Data 2 was saved ")
+    console.log("result of promise :",result)
+    return saveToDb("raj")
+}).then((result)=>{
+    console.log("Data 3 was saved ")
+    console.log("result of promise :",result)
+})
+
+.catch((error)=> {
+    console.log(error)
+    // console.log("promise not resolve")
+})
+
+
+</script>
+
+</html>
