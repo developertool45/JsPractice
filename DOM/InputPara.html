@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input to paragraph</title>
+  </head>
+  <body>
+    <h1>Make a list with Dynamic Data</h1>
+    <p></p>
+    <input type="text" placeholder="type here" />
+    
+    <button>Add Task</button>
+    <ul>
+      <li> Rajneesh kumar <button class="delete">Delete</button></li>
+      <li> Vishal kumar<button class="delete">Delete</button></li>
+    </ul>
+  </body>
+  <script>
+    let input = document.querySelector("input");
+    let btn = document.querySelector("button");
+    let ul = document.querySelector("ul");
+   
+
+    btn.addEventListener("click", function (e) {
+      
+      let li = document.createElement("li");
+      li.innerText = input.value;
+      ul.appendChild(li);
+
+      console.log(input.value);      
+      // li add to ul
+
+      let dltbtn = document.createElement("button");
+      dltbtn.innerText = "Delete";
+      dltbtn.classList.add("delete");
+      // console.log(dltbtn)
+
+      li.appendChild(dltbtn);
+      input.value = "";
+        // console.log(li)
+        
+       // deleting button
+      //  let dltBtns = document.querySelectorAll(".delete");  
+
+      //   for( dltBtn of dltBtns) {
+      //   dltBtn.addEventListener("click",function(){
+      //       let par = this.parentElement;
+      //       // console.log(par);
+      //       par.remove();
+      //   })
+        
+      // };
+       });
+
+      // let dltBtns = document.querySelectorAll(".delete");  
+      ul.addEventListener("click", function(event){
+        if(event.target.nodeName == 'BUTTON'){
+          let listItem = event.target.parentElement;
+          listItem.remove();
+          console.log("delete")
+        }
+        
+      })
+
+        
+        
+   
+   
+    
+
+  </script>
+</html>

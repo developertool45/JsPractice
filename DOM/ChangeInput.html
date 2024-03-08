@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+</head>
+<body>
+    <form action="/action">
+        <input type="text" placeholder="username" id="user">
+        <!-- <input type="password" placeholder="password" id="pass"> -->
+        <button> Register</button>  
+    </form>
+</body>
+
+<script>
+
+      let form = document.querySelector('form');
+
+        form.addEventListener("submit", function(e){
+             e.preventDefault()            
+            })
+
+
+        let user = document.querySelector('#user')
+        /// input change then value get called
+        user.addEventListener("change", function(e){
+            console.log("input changed")
+            console.log("final value is :", this.value)
+
+        })
+        /// every minor change then value get called
+        user.addEventListener("input", function(e){
+            // console.log("input changed method")
+            console.log("final value is :", this.value)
+
+        })
+
+
+
+
+            
+</script>
+</html>
