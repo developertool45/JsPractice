@@ -6,23 +6,13 @@
     <title>api use</title>
 </head>
 <body>
-    <img src="" alt="" width="100%" height="500px">
+    <div>
+        <button>show facts</button>
+        <h1> get random facts</h1>
+        <p> Cats fact Here</p>
+        
+    </div>
 </body>
-<script>
-   
-
-let apiData = "https://dog.ceo/api/breeds/image/random"
-    let data =  JSON.parse(apiData);
-    
-   if(data ==apiData){
-     let img =  document.querySelector('img')
-    let srcImg = img.getAttribute('src');
-    srcImg = data;
-    img.setAttribute('src', data)
-   }
-
-
- 
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./app.js"></script>
 </html>
