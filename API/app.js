@@ -1,5 +1,8 @@
 let url = "https://catfact.ninja/fact";
-let p = document.querySelector("p");
+let url2 = 'https://dog.ceo/api/breeds/image/random'
+
+// let p = document.querySelector("p");
+let imgDog = document.querySelector("#result");
 let button = document.querySelector('BUTTON')
 // fetch(url)
 //     .then((res) => {
@@ -33,35 +36,39 @@ let button = document.querySelector('BUTTON')
 // }
 
 //axios
-async function getFacts() {
-    try {
-        let res = await axios(url);              
-        console.log(res.data.fact);
-    } catch (error) {
-        console.log(error);
-        
-    }
-    
-}
-
+// async function getFacts() {
+//     try {
+//         let res = await axios(url2);              
+//         console.log(res);
+//     } catch (error) {
+//         console.log(error);        
+//     }    
+// }
 // axios using get method
+// async function getApiFacts(){
+//     try {
+//         let res = await axios.get(url2);
+//         console.log(res);
+//         // return res.data.fact;
+//     } catch (error) {
+//         console.log(error);
+//         return "Something went wrong";
+//     }
+// }
 
-
-async function getApiFacts(){
+async function getDogImage() {
     try {
-        let res = await axios.get(url);
-        console.log(res.data);
-        return res.data.fact;
+        let res = await axios.get(url2)
+        return res.data.message;
     } catch (error) {
-        console.log(error);
-        return "Something went wrong";
+        console.log("error", error);
     }
 }
-
 button.addEventListener("click", async() => {
-    let fact = await getApiFacts();
-    p.innerText = fact;
-    console.log(fact);
+    let dogFact = await getDogImage();
+    imgDog.setAttribute('src', dogFact)
+    // p.innerText = fact;
+    console.log(dogFact);
 })
 
 
