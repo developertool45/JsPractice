@@ -7,25 +7,20 @@ let btn = document.querySelector('.search button');
 
 
 
-async function getWeather(city) {
-    try {        
+async function getWeather(city) {           
         let data = await fetch(apiKey + city + `&appid=${key}`);
         let response = await data.json();
 
         if (response.status == 404) {
-            document.querySelector("#error").style.display = "block";
-            document.querySelector(".weather").style.display = "none";
+            let error = document.querySelector(".error");
+            error.style.display = "block";
+            let blockHide = document.querySelector(".weather");
+            blockHide.style.display = "none";
         } else {
             showData(response);  
             console.log(response);
-        }
-              
-    } catch (error) {
-        console.log("Something went wrong",error);
-    }
-
+        } 
 }
-
 function showData(response) {      
     document.querySelector('.city').innerHTML = response.name;
     document.querySelector('.temp').innerHTML = Math.round(response.main.temp - 273) + "°C";
@@ -47,7 +42,7 @@ function showData(response) {
          changeImg.src = "images/snow.png";    
 } 
     
-document.querySelector("#error").style.display = "none";
+document.querySelector(".error").style.display = "none";
 document.querySelector(".weather").style.display = "block";
 }  
 
