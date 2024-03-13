@@ -12,10 +12,8 @@ async function getWeather(city) {
         let response = await data.json();
 
         if (response.status == 404) {
-            let error = document.querySelector(".error");
-            error.style.display = "block";
-            let blockHide = document.querySelector(".weather");
-            blockHide.style.display = "none";
+            document.querySelector(".error").style.display = "block";
+            document.querySelector(".weather").style.display = "none";
         } else {
             showData(response);  
             console.log(response);
@@ -40,7 +38,7 @@ function showData(response) {
          changeImg.src = "images/rain.png";    
    }else if (response.weather[0].main == "snow") {
          changeImg.src = "images/snow.png";    
-} 
+    } 
     
 document.querySelector(".error").style.display = "none";
 document.querySelector(".weather").style.display = "block";
@@ -48,6 +46,5 @@ document.querySelector(".weather").style.display = "block";
 
 btn.addEventListener("click", () => {
     let city =  input.value;    
-    getWeather(city); 
-    
+    getWeather(city);    
 })
