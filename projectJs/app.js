@@ -48,4 +48,4 @@ btn.addEventListener("click", () => {
     let city =  input.value;    
     getWeather(city);    
 })
-// this code for weather report
+// /new file add
