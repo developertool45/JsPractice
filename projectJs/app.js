@@ -46,6 +46,7 @@ document.querySelector(".weather").style.display = "block";
 
 btn.addEventListener("click", () => {
     let city =  input.value;    
-    getWeather(city);    
+    getWeather(city);  
+    console.log(city);
 })
 // /new file add
