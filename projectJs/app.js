@@ -40,8 +40,8 @@ function showData(response) {
          changeImg.src = "images/snow.png";    
     } 
     
-document.querySelector(".error").style.display = "none";
-document.querySelector(".weather").style.display = "block";
+    document.querySelector(".weather").style.display = "block";
+    document.querySelector(".error").style.display = "none";
 }  
 
 btn.addEventListener("click", () => {
